@@ -58,23 +58,21 @@ class _SpeedState extends State<Speed> {
             _speedLimit = body['elements'][0]['tags']['maxspeed'];
           });
         } else  {
-          setState(() {
+          /*setState(() {
             _speedLimit = "";
           });
-          print("Speed not found");
+          print("Speed not found");*/
           return;
         }
       } on RangeError catch(e) {
         setState(() {
           _speedLimit = "";
         });
-        print("Speed not found");
         return;
       }
     } else {
       // If the server did not return a 200 OK response,
       // then throw an exception.
-      print("Speed not found");
       throw Exception('Failed to load Way');
     }
   }
@@ -122,7 +120,7 @@ class _SpeedState extends State<Speed> {
           children: [
             Text(
               _value.toStringAsFixed(0) + " Km/h",
-              style: TextStyle(fontSize: 45, fontFamily: 'Nexa'),
+              style: TextStyle(fontSize: 45, fontFamily: 'Nexa', color: _value > int.parse(_speedLimit) ? Colors.red : Colors.black),
             ),
             if(_speedLimit != "")
               _buildPanel()

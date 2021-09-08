@@ -32,6 +32,7 @@ dependencies:
   animated_splash_screen: ^1.1.0
   fluttertoast: ^8.0.8
   http: ^0.13.3
+  notifications: ^2.0.1
   spotify_sdk:
     path: spotify_sdk/
 

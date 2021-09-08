@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'speedometer.dart';
 import 'package:spotify_sdk/spotify_sdk.dart';
-
+import 'notifications_listener.dart';
 
 // SPEED AND HOUR/NOTIFICATIONS
 class LeftColumn extends StatefulWidget {
@@ -101,13 +101,7 @@ class _LeftColumnState extends State<LeftColumn> {
               ),
               child: Center(
                   child:
-                  Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        FloatingActionButton.extended(onPressed: connect, label: Text("CONNEXION"), ),
-                        FloatingActionButton.extended(onPressed: disconnect, label: Text("DECONNEXION"))
-                      ]
-                  )
+                    NotificationsLts()
               ),
             ),
           ),
